@@ -1,42 +1,13 @@
-"""Execute notebook code cells in order without adding notebook runtime dependencies."""
+"""Execute the curated notebook through the installed project package."""
 
 from __future__ import annotations
 
-import argparse
-import json
-import os
 from pathlib import Path
-from typing import Any
 
+from explainable_risk_intelligence.notebook_runner import main
 
-def execute_notebook(path: Path) -> int:
-    notebook = json.loads(path.read_text(encoding="utf-8"))
-    namespace: dict[str, Any] = {"__name__": "__notebook__"}
-    original_directory = Path.cwd()
-    project_root = path.resolve().parents[1]
-    os.chdir(project_root)
-    try:
-        for index, cell in enumerate(notebook["cells"], start=1):
-            if cell.get("cell_type") != "code":
-                continue
-            source = "".join(cell.get("source", []))
-            exec(compile(source, f"{path.name}:cell-{index}", "exec"), namespace)
-    finally:
-        os.chdir(original_directory)
-    print(f"Notebook execution passed: {path}")
-    return 0
-
-
-def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "notebook",
-        nargs="?",
-        type=Path,
-        default=Path("notebooks/01_portfolio_analysis.ipynb"),
-    )
-    return execute_notebook(parser.parse_args().notebook)
+ROOT = Path(__file__).resolve().parents[1]
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(main(default_notebook=ROOT / "notebooks" / "01_portfolio_analysis.ipynb"))

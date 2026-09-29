@@ -4,8 +4,8 @@ import shutil
 from pathlib import Path
 
 from explainable_risk_intelligence.config import ProjectPaths
+from explainable_risk_intelligence.notebook_runner import execute_notebook
 from explainable_risk_intelligence.portfolio import load_portfolio_evidence
-from scripts.execute_notebook import execute_notebook
 
 
 def test_curated_notebook_uses_only_published_evidence(tmp_path: Path, capsys: object) -> None:

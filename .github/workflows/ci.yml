@@ -36,7 +36,7 @@ jobs:
       - name: Repository audit
         run: python scripts/audit_repository.py
       - name: Tests
-        run: pytest
+        run: python -m pytest
       - name: Curated notebook execution
         run: python scripts/execute_notebook.py
       - name: Offline model smoke test

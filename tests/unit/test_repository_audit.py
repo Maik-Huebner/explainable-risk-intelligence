@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from scripts.audit_repository import audit_repository, main
+from explainable_risk_intelligence.repository_audit import audit_repository, main
 
 
 def test_audit_scans_env_citation_notebook_and_public_json(tmp_path: Path) -> None:
