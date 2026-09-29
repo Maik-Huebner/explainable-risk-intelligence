@@ -154,6 +154,13 @@ make reproduce
 make notebook-check
 ```
 
+`make install` selects a fully pinned lock from the invoking interpreter: Python 3.11 and 3.12 use
+`requirements-lock-py311.txt`, while Python 3.13 uses `requirements-lock-py313.txt`. The 3.11 baseline
+lock has been resolved as a complete Linux wheel set for CPython 3.11 and 3.12. The 3.13 lock preserves
+the exact environment used for the verified model reproduction. Both locks are fully pinned; neither CI
+path performs unpinned dependency resolution. Editable installation and package build disable isolated
+build environments so the pinned `setuptools`, `wheel`, and `build` versions are used as well.
+
 Equivalent commands:
 
 ```bash
@@ -169,10 +176,11 @@ depend on a repository-relative `configs/` directory. Generated outputs use the 
 when run from a checkout and otherwise the current working directory. Set `ERI_PROJECT_ROOT` explicitly
 when an installed CLI should write to another workspace.
 
-CI uses `requirements-lock.txt`, installs the local package without resolving new dependencies, runs Ruff,
-the lightweight repository audit, pytest, the curated notebook, and an offline synthetic model smoke test.
-It then builds the wheel/sdist and checks the installed wheel's packaged configuration in an isolated
-environment. The audit is a useful fail-fast gate, not a replacement for a professional secret scanner.
+CI maps Python 3.11 explicitly to `requirements-lock-py311.txt` and Python 3.13 explicitly to
+`requirements-lock-py313.txt`, then installs the local package without resolving new dependencies. Each
+matrix entry runs Ruff, the lightweight repository audit, pytest, the curated notebook, an offline
+synthetic model smoke test, package build, and installed-wheel smoke test. The audit is a useful fail-fast
+gate, not a replacement for a professional secret scanner.
 
 `make notebook-check` reads only publishable evidence under `reports/`; it works from a fresh clone without
 generated data, fitted models, or `artifacts/model_metadata.json`. A full `make reproduce` refreshes both
