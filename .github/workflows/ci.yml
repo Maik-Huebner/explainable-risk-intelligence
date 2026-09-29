@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install locked dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-lock.txt
+          pip install --no-deps -e .
+      - name: Lint
+        run: ruff check src tests scripts
+      - name: Format check
+        run: ruff format --check src tests scripts
+      - name: Repository audit
+        run: python scripts/audit_repository.py
+      - name: Tests
+        run: pytest
+      - name: Curated notebook execution
+        run: python scripts/execute_notebook.py
+      - name: Offline model smoke test
+        run: python -m explainable_risk_intelligence.cli smoke-test
+      - name: Build package
+        run: python -m build
+      - name: Installed wheel smoke test
+        run: |
+          python -m venv --system-site-packages "$RUNNER_TEMP/wheel-venv"
+          "$RUNNER_TEMP/wheel-venv/bin/pip" install --no-deps dist/*.whl
+          cd "$RUNNER_TEMP"
+          "$RUNNER_TEMP/wheel-venv/bin/python" -c "from explainable_risk_intelligence.config import load_config; assert load_config()['project']['random_seed'] == 42"
+          "$RUNNER_TEMP/wheel-venv/bin/python" -m explainable_risk_intelligence.cli smoke-test

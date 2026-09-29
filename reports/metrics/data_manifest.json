@@ -1,0 +1,59 @@
+{
+  "columns": 34,
+  "default_rate": 0.2212,
+  "excluded_from_model": [
+    "record_id",
+    "audit_sex",
+    "audit_age",
+    "audit_age_band",
+    "audit_education",
+    "audit_marriage"
+  ],
+  "model_features": [
+    "LIMIT_BAL",
+    "PAY_0",
+    "PAY_2",
+    "PAY_3",
+    "PAY_4",
+    "PAY_5",
+    "PAY_6",
+    "BILL_AMT1",
+    "BILL_AMT2",
+    "BILL_AMT3",
+    "BILL_AMT4",
+    "BILL_AMT5",
+    "BILL_AMT6",
+    "PAY_AMT1",
+    "PAY_AMT2",
+    "PAY_AMT3",
+    "PAY_AMT4",
+    "PAY_AMT5",
+    "PAY_AMT6",
+    "avg_bill_amount",
+    "avg_payment_amount",
+    "credit_utilization",
+    "payment_to_bill_ratio",
+    "max_payment_delay",
+    "delayed_month_count",
+    "bill_amount_trend",
+    "payment_amount_trend"
+  ],
+  "random_seed": 42,
+  "rows": 30000,
+  "split_strategy": "stratified random train/validation/test; no timestamp available",
+  "splits": {
+    "test": {
+      "default_rate": 0.22116666666666668,
+      "rows": 6000
+    },
+    "train": {
+      "default_rate": 0.2212222222222222,
+      "rows": 18000
+    },
+    "validation": {
+      "default_rate": 0.22116666666666668,
+      "rows": 6000
+    }
+  },
+  "target": "default_next_month"
+}

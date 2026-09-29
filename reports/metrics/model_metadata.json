@@ -1,0 +1,79 @@
+{
+  "best_cv_score": 0.5587698797919194,
+  "best_hyperparameters": {
+    "model__l2_regularization": 5.0,
+    "model__learning_rate": 0.05,
+    "model__max_iter": 350,
+    "model__max_leaf_nodes": 31,
+    "model__min_samples_leaf": 40
+  },
+  "fast_mode": false,
+  "final_variant": "sigmoid_calibrated",
+  "model_features": [
+    "LIMIT_BAL",
+    "PAY_0",
+    "PAY_2",
+    "PAY_3",
+    "PAY_4",
+    "PAY_5",
+    "PAY_6",
+    "BILL_AMT1",
+    "BILL_AMT2",
+    "BILL_AMT3",
+    "BILL_AMT4",
+    "BILL_AMT5",
+    "BILL_AMT6",
+    "PAY_AMT1",
+    "PAY_AMT2",
+    "PAY_AMT3",
+    "PAY_AMT4",
+    "PAY_AMT5",
+    "PAY_AMT6",
+    "avg_bill_amount",
+    "avg_payment_amount",
+    "credit_utilization",
+    "payment_to_bill_ratio",
+    "max_payment_delay",
+    "delayed_month_count",
+    "bill_amount_trend",
+    "payment_amount_trend"
+  ],
+  "python_hash_seed": "not-set",
+  "random_seed": 42,
+  "selected_model": "tuned_hist_gradient_boosting",
+  "selected_threshold": 0.17000000000000004,
+  "selection_metric": "average_precision",
+  "sensitive_features_excluded": [
+    "SEX",
+    "AGE",
+    "EDUCATION",
+    "MARRIAGE"
+  ],
+  "training_rows": 18000,
+  "validation_metrics": {
+    "accuracy": 0.6883333333333334,
+    "average_precision": 0.5602312730823564,
+    "brier_score": 0.13389571436743156,
+    "confusion_matrix": [
+      [
+        3128,
+        1545
+      ],
+      [
+        325,
+        1002
+      ]
+    ],
+    "f1": 0.5172947857511616,
+    "false_negative": 325,
+    "false_positive": 1545,
+    "log_loss": 0.426307235623876,
+    "precision": 0.3934040047114252,
+    "recall": 0.7550866616428034,
+    "roc_auc": 0.7867930394604417,
+    "threshold": 0.17000000000000004,
+    "true_negative": 3128,
+    "true_positive": 1002
+  },
+  "validation_rows": 6000
+}

@@ -1,0 +1,33 @@
+project:
+  name: Explainable Risk Intelligence
+  random_seed: 42
+
+dataset:
+  name: Default of Credit Card Clients
+  uci_id: 350
+  doi: https://doi.org/10.24432/C55S3H
+  source_page: https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients
+  download_url: https://archive.ics.uci.edu/static/public/350/default%2Bof%2Bcredit%2Bcard%2Bclients.zip
+  archive_sha256: 56c885f84457f6680f8438f02bfcdac9579323d8a94465ee5f26e32baa727602
+  archive_name: uci_default_credit_card_clients.zip
+  workbook_name: default of credit card clients.xls
+  license: CC BY 4.0
+
+split:
+  train_size: 0.60
+  validation_size: 0.20
+  test_size: 0.20
+
+training:
+  cv_folds: 3
+  search_iterations: 8
+  scoring: average_precision
+  calibration_method: sigmoid
+  bootstrap_iterations: 500
+
+threshold:
+  false_positive_cost: 1.0
+  false_negative_cost: 5.0
+  grid_start: 0.05
+  grid_stop: 0.80
+  grid_step: 0.01

@@ -1,0 +1,15 @@
+{
+  "gaps": {
+    "audit_age_band": {
+      "demographic_parity_difference": 0.06720925451437404,
+      "equal_opportunity_difference": 0.045765027322404284,
+      "equalized_odds_difference": 0.06656054335137429
+    },
+    "audit_sex": {
+      "demographic_parity_difference": 0.026340380607414893,
+      "equal_opportunity_difference": 0.03634641608839129,
+      "equalized_odds_difference": 0.03634641608839129
+    }
+  },
+  "warning": "Observed benchmark disparities are descriptive. They neither prove fairness nor establish legal or regulatory acceptability."
+}

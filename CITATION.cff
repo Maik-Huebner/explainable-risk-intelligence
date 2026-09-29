@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this portfolio implementation, please cite it and the original UCI dataset."
+title: "Explainable Risk Intelligence"
+type: software
+authors:
+  - family-names: "Hübner"
+    given-names: "Maik"
+version: 1.0.0
+date-released: 2026-09-29
+license: MIT
+preferred-citation:
+  type: dataset
+  title: "Default of Credit Card Clients"
+  authors:
+    - family-names: "Yeh"
+      given-names: "I-Cheng"
+  year: 2009
+  doi: "10.24432/C55S3H"

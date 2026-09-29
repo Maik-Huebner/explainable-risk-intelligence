@@ -1,0 +1,6 @@
+{
+  "current_mean_prediction": 0.23689765028029297,
+  "mean_prediction_shift": 0.015028168711160361,
+  "reference_mean_prediction": 0.2218694815691326,
+  "warning": "Monitoring prototype using synthetic perturbations; not evidence of production operation."
+}

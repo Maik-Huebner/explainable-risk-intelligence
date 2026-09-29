@@ -1,0 +1,20 @@
+{
+  "input_validation_checks": {
+    "negative_limit_rejected": true,
+    "repayment_status_above_9_rejected": true,
+    "valid_complete_row_accepted": true
+  },
+  "invalid_input_rejected": true,
+  "missingness_stress_test": {
+    "average_precision": 0.5441016438803175,
+    "average_precision_change": -0.015224916420668588,
+    "brier_score": 0.1369206621919942,
+    "brier_score_change": 0.002456316581324419,
+    "injected_cell_fraction": 0.05
+  },
+  "plausible_perturbation": {
+    "assumption": "LIMIT_BAL +10%; payment amounts -5%; all dependent engineered features rebuilt",
+    "mean_absolute_probability_change": 0.005964294219390676
+  },
+  "scope_warning": "Sensitivity checks are not adversarial-ML evidence."
+}

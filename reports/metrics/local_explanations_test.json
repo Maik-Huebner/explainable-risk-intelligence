@@ -1,0 +1,218 @@
+[
+  {
+    "attribution_scope": "uncalibrated selected base estimator in transformed feature space",
+    "case_label": "high_risk",
+    "interpretation_warning": "Feature attribution is not causality.",
+    "predicted_default_probability": 0.806930915397375,
+    "probability_source": "sigmoid-calibrated final model",
+    "record_id": 27537,
+    "risk_increasing_attributions": [
+      {
+        "attribution": 0.9205764829216059,
+        "feature": "max_payment_delay",
+        "original_feature_value": 3.0,
+        "transformed_feature_value": 1.9078029741822529
+      },
+      {
+        "attribution": 0.9186855425592512,
+        "feature": "PAY_0",
+        "original_feature_value": 3.0,
+        "transformed_feature_value": 2.697227905173797
+      },
+      {
+        "attribution": 0.24109335433284287,
+        "feature": "delayed_month_count",
+        "original_feature_value": 6.0,
+        "transformed_feature_value": 3.320641899667991
+      },
+      {
+        "attribution": 0.19542516300876742,
+        "feature": "payment_to_bill_ratio",
+        "original_feature_value": 0.0,
+        "transformed_feature_value": -0.0177118231287617
+      },
+      {
+        "attribution": 0.10075031187108835,
+        "feature": "BILL_AMT1",
+        "original_feature_value": 2487.0,
+        "transformed_feature_value": -0.6651734419560852
+      }
+    ],
+    "risk_reducing_attributions": [
+      {
+        "attribution": -0.05878168001800077,
+        "feature": "LIMIT_BAL",
+        "original_feature_value": 250000.0,
+        "transformed_feature_value": 0.6377344554349252
+      },
+      {
+        "attribution": -0.01198037834954448,
+        "feature": "credit_utilization",
+        "original_feature_value": 0.009948,
+        "transformed_feature_value": -1.0272716117677176
+      },
+      {
+        "attribution": -0.003895858647956629,
+        "feature": "BILL_AMT6",
+        "original_feature_value": 2487.0,
+        "transformed_feature_value": -0.6121926705328434
+      },
+      {
+        "attribution": 1.0561132658040151e-05,
+        "feature": "payment_amount_trend",
+        "original_feature_value": 0.0,
+        "transformed_feature_value": -0.015358560838349187
+      },
+      {
+        "attribution": 0.00364220599149121,
+        "feature": "PAY_3",
+        "original_feature_value": 2.0,
+        "transformed_feature_value": 1.8090565248953117
+      }
+    ]
+  },
+  {
+    "attribution_scope": "uncalibrated selected base estimator in transformed feature space",
+    "case_label": "low_risk",
+    "interpretation_warning": "Feature attribution is not causality.",
+    "predicted_default_probability": 0.03605137651344179,
+    "probability_source": "sigmoid-calibrated final model",
+    "record_id": 27786,
+    "risk_increasing_attributions": [
+      {
+        "attribution": 0.03176086677231069,
+        "feature": "bill_amount_trend",
+        "original_feature_value": -93672.0,
+        "transformed_feature_value": -2.4353493834674884
+      },
+      {
+        "attribution": 0.007023011099554424,
+        "feature": "BILL_AMT4",
+        "original_feature_value": 117835.0,
+        "transformed_feature_value": 1.173175122205788
+      },
+      {
+        "attribution": 0.0039540651784045625,
+        "feature": "PAY_4",
+        "original_feature_value": 0.0,
+        "transformed_feature_value": 0.1866794350359842
+      },
+      {
+        "attribution": 0.0022961416647012812,
+        "feature": "PAY_5",
+        "original_feature_value": 0.0,
+        "transformed_feature_value": 0.23500575479246966
+      },
+      {
+        "attribution": -0.0013671387122303714,
+        "feature": "PAY_3",
+        "original_feature_value": 0.0,
+        "transformed_feature_value": 0.13825853376595432
+      }
+    ],
+    "risk_reducing_attributions": [
+      {
+        "attribution": -0.28642012970056385,
+        "feature": "max_payment_delay",
+        "original_feature_value": 0.0,
+        "transformed_feature_value": -0.3342288126695786
+      },
+      {
+        "attribution": -0.2229124416662671,
+        "feature": "avg_payment_amount",
+        "original_feature_value": 24379.0,
+        "transformed_feature_value": 1.8796212446298852
+      },
+      {
+        "attribution": -0.16901994075684343,
+        "feature": "LIMIT_BAL",
+        "original_feature_value": 420000.0,
+        "transformed_feature_value": 1.949835865542794
+      },
+      {
+        "attribution": -0.15932404673061684,
+        "feature": "credit_utilization",
+        "original_feature_value": 0.2023809523809523,
+        "transformed_feature_value": -0.4794320249197042
+      },
+      {
+        "attribution": -0.14178484472558922,
+        "feature": "PAY_AMT2",
+        "original_feature_value": 100000.0,
+        "transformed_feature_value": 4.656703348186451
+      }
+    ]
+  },
+  {
+    "attribution_scope": "uncalibrated selected base estimator in transformed feature space",
+    "case_label": "near_threshold",
+    "interpretation_warning": "Feature attribution is not causality.",
+    "predicted_default_probability": 0.17004112081437084,
+    "probability_source": "sigmoid-calibrated final model",
+    "record_id": 22449,
+    "risk_increasing_attributions": [
+      {
+        "attribution": 0.07538685807689034,
+        "feature": "BILL_AMT1",
+        "original_feature_value": 390.0,
+        "transformed_feature_value": -0.6941533859069621
+      },
+      {
+        "attribution": 0.06305141459481092,
+        "feature": "LIMIT_BAL",
+        "original_feature_value": 50000.0,
+        "transformed_feature_value": -0.905914262339038
+      },
+      {
+        "attribution": 0.06125761745905038,
+        "feature": "PAY_AMT1",
+        "original_feature_value": 390.0,
+        "transformed_feature_value": -0.3129692900970864
+      },
+      {
+        "attribution": 0.04981238438675064,
+        "feature": "bill_amount_trend",
+        "original_feature_value": -16712.0,
+        "transformed_feature_value": -0.6655956460763849
+      },
+      {
+        "attribution": 0.03836286177815054,
+        "feature": "PAY_AMT2",
+        "original_feature_value": 390.0,
+        "transformed_feature_value": -0.2709592602292656
+      }
+    ],
+    "risk_reducing_attributions": [
+      {
+        "attribution": -0.284696771078743,
+        "feature": "max_payment_delay",
+        "original_feature_value": 0.0,
+        "transformed_feature_value": -0.3342288126695786
+      },
+      {
+        "attribution": -0.19556801739381627,
+        "feature": "avg_payment_amount",
+        "original_feature_value": 3811.8333333333335,
+        "transformed_feature_value": -0.14303751493549016
+      },
+      {
+        "attribution": -0.08748773051876924,
+        "feature": "credit_utilization",
+        "original_feature_value": 0.1781233333333333,
+        "transformed_feature_value": -0.5484913197677913
+      },
+      {
+        "attribution": -0.06407713352076826,
+        "feature": "PAY_AMT6",
+        "original_feature_value": 3334.0,
+        "transformed_feature_value": -0.10643163290885314
+      },
+      {
+        "attribution": -0.05063623144320445,
+        "feature": "PAY_AMT3",
+        "original_feature_value": 18015.0,
+        "transformed_feature_value": 0.7314249113720306
+      }
+    ]
+  }
+]

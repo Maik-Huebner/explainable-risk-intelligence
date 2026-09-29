@@ -1,0 +1,33 @@
+{
+  "counts": {
+    "correct": 4031,
+    "false_negative": 359,
+    "false_positive": 1610
+  },
+  "interpretation": "Rates are descriptive test-set observations under the illustrative review policy. They do not identify causes, prove demographic effects, or define lending decisions.",
+  "near_threshold_analysis": {
+    "absolute_probability_window": 0.05,
+    "error_count": 799,
+    "error_rate": 0.41766858337689494,
+    "false_negative_count": 193,
+    "false_positive_count": 606,
+    "sample_size": 1913
+  },
+  "observations": [
+    "male / under_30 has the highest observed error rate (0.363; n=669).",
+    "male / under_30 has the highest observed false positive rate (0.408; 212 / 519 non-default cases).",
+    "female / 40_to_49 has the highest observed false negative rate (0.300; 54 / 180 default cases).",
+    "Within \u00b10.05 of the threshold, 799 of 1913 cases are errors (0.418)."
+  ],
+  "rates": {
+    "false_negative_rate": 0.2705350414468726,
+    "false_positive_rate": 0.3445324202867537,
+    "overall_error_rate": 0.32816666666666666
+  },
+  "sample_size": 6000,
+  "segment_analysis": {
+    "maximum_segment_size": 1291,
+    "minimum_segment_size": 268,
+    "segment_count": 8
+  }
+}

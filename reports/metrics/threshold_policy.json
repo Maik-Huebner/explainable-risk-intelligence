@@ -1,0 +1,7 @@
+{
+  "false_negative_cost": 5.0,
+  "false_positive_cost": 1.0,
+  "purpose": "illustrative decision-support review policy; not a lending decision",
+  "selected_threshold": 0.17000000000000004,
+  "selection_data": "validation only"
+}
